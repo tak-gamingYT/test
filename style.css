@@ -1,19 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Khula:700');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Karla', sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 10px;
 }
 
 #chatContainer {
     text-align: left;
-    margin-top: 50px;
+    margin-top: 20px;
     border: 1px solid #ccc;
     padding: 10px;
-    height: 300px;
-    overflow-y: scroll; /* Thay đổi auto thành scroll để luôn hiển thị thanh cuộn */
+    height: 200px;
+    overflow-y: scroll;
 }
 
+
+#userListContainer {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #eee;
+    padding: 10px;
+    max-height: calc(100% - 20px);
+    overflow-y: auto;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+#userListTitle {
+    color: #555;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#userList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+
 #messageInput {
-    width: 300px;
+    width: 80%;
+    max-width: 300px;
     height: 30px;
     padding: 5px;
 }
@@ -48,4 +86,226 @@ body {
     padding: 0;
     margin: 0;
     text-align: left;
+}
+
+#kbn, #kbn1 {
+    position: fixed;
+    bottom: 0px;
+    width: 130px;
+    z-index: 999;
+}
+
+#kbn {
+    left: 0px;
+}
+
+#kbn1 {
+    right: 0px;
+}
+
+#fpsDisplay {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Rounded border */
+    color: #007bff; /* Blue color */
+    font-size: smaller;
+    z-index: 999;
+}
+
+.snowflake {
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    user-select: none;
+    cursor: default;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+    font-size: 18px;
+}
+
+@keyframes snowflakes-fall {
+    0% {
+        top: -10%;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 100%;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes snowflakes-shake {
+    0%, 100% {
+        transform: translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(80px) rotate(45deg);
+    }
+}
+
+.snowflake {
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    user-select: none;
+    cursor: default;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+    font-size: 18px;
+}
+
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    animation-delay: 0s, 0s;
+}
+
+.snowflake:nth-of-type(1) {
+    left: 10%;
+    animation-delay: 1s, 1s;
+}
+
+.snowflake:nth-of-type(2) {
+    left: 20%;
+    animation-delay: 6s, 0.5s;
+}
+
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    animation-delay: 4s, 2s;
+}
+
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    animation-delay: 2s, 2s;
+}
+
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    animation-delay: 8s, 3s;
+}
+
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    animation-delay: 6s, 2s;
+}
+
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    animation-delay: 2.5s, 1s;
+}
+
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    animation-delay: 1s, 0s;
+}
+
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    animation-delay: 3s, 1.5s;
+}
+
+.snowflake:nth-of-type(10) {
+    left: 25%;
+    animation-delay: 2s, 0s;
+}
+
+.snowflake:nth-of-type(11) {
+    left: 65%;
+    animation-delay: 4s, 2.5s;
+}
+
+.text-dark {
+    color: rgb(16, 17, 17);
+    font-size: 16px;
+}
+
+#momk {
+    animation: colorRotate 2.5s linear 0s infinite;
+}
+#mom {
+    animation: colorRotate 2.5s linear 0s infinite;
+}
+
+@keyframes colorRotate {
+    from {
+        color: #FF0000;
+    }
+    10% {
+        color: #00FFFF;
+    }
+    50% {
+        color: #00FF00;
+    }
+    100% {
+        color: #FFFF00;
+    }
+}
+
+.footer {
+  width: 100%;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-container {
+  margin: auto;
+  text-align: center;
+  color: var(--theme-text-primary);
+}
+
+.footer-container a {
+  color: var(--theme-stree-color);
+  font-weight: bolder;
+  transition: color 0.3s ease;
+}
+
+.footer-container a:hover {
+  color: var(--theme-text-active);
+}
+
+.footer-container p {
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+.line {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+
+/* Add styles for smaller screens (up to 600px) */
+@media only screen and (max-width: 600px) {
+    #messageInput {
+        width: 80%;
+        max-width: 200px;
+    }
+
+    #chatContainer {
+        height: 150px;
+    }
+
+    .footer-container {
+        font-size: 14px;
+    }
+
+    #userListContainer {
+        max-height: 50vh;
+    }
+	#kbn, #kbn1 {
+	width: 100px;
+	}
 }

@@ -2,47 +2,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Chat App</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="icon" type="image/x-icon" id="favicon">
+    <meta charset="UTF-8">
+    <meta name="description" content="A Chat Website!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" id="favicon">
+	<link href="css.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Phòng Chat</h1>
-  <div id="chatContainer" class="hidden" oninput="handleChatContainerScroll()"></div>
-
-  <form id="chatForm" class="hidden">
-    <input type="text" id="name" placeholder="Nhập tên của bạn">
-    <input type="text" id="messageInput" placeholder="Nhập tin nhắn">
-    <button type="button" onclick="sendMessage()">Gửi</button>
-  </form>
-
-  <ul id="userList" class="hidden"></ul>
-
-  <script src="script.js"></script>
-  <script>
-    function getRandomIcon() {
-      var icons = ['ico1.ico', 'ico2.ico', 'ico3.ico', 'ico4.ico'];
-      var randomIndex = Math.floor(Math.random() * icons.length);
-      return icons[randomIndex];
-    }
-
-    // Thiết lập favicon bằng icon ngẫu nhiên khi trang được tải
-    document.addEventListener('DOMContentLoaded', function () {
-      var favicon = document.getElementById('favicon');
-      favicon.href = getRandomIcon();
-    });
-
-    window.addEventListener("load", function() {
-      checkUsername();
-    });
-
-    var messageInput = document.getElementById("messageInput");
-    messageInput.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-        sendMessage();
-      }
-    });
-  </script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <h1>Phòng Chat.</h1>
+    <!-- FPS Part -->
+    <div id="fpsDisplay"></div>
+    <!--End Fps-->
+    <div>
+        <span class="text-dark">Phòng Chat Tạo Từ: <span id="momk"></span></span>
+    </div>
+    <div>
+        <span class="text-dark">Noel Còn: <span id="mom"></span></span>
+    </div>
+    <div id="chatContainer" class="hidden" oninput="handleChatContainerScroll()"></div>
+    <form id="chatForm" class="hidden">
+        <input type="text" id="name" placeholder="Nhập tên của bạn" autofocus>
+        <textarea id="messageInput" placeholder="Nhập tin nhắn (tối đa 1500 ký tự, vượt quá sẽ tự động bị xóa)"></textarea>
+        <button type="button" onclick="sendMessage()">Gửi</button>
+    </form>
+    <ul id="userList" class="hidden"></ul>
+    <img id="kbn" src="/cute.gif" alt="Art1">
+    <img id="kbn1" src="" alt="Art2">
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">🎄</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">🎄</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">🎄</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">🎄</div>
+    </div>
+    <script src="script.js"></script>
+    <footer class="footer">
+        <hr class="line">
+        <div class="footer-container">
+            <p>Coder - <a href="https://www.facebook.com/Tak.Nek.XD" target="_blank">Tak</a></p>
+            <p>All rights reserved © 2023</p>
+        </div>
+    </footer>
 </body>
 </html>
+<!-------------Tak------------->
