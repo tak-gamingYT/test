@@ -1,0 +1,48 @@
+<!-------------Tak------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat App</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/x-icon" id="favicon">
+</head>
+<body>
+  <h1>Phòng Chat</h1>
+  <div id="chatContainer" class="hidden" oninput="handleChatContainerScroll()"></div>
+
+  <form id="chatForm" class="hidden">
+    <input type="text" id="name" placeholder="Nhập tên của bạn">
+    <input type="text" id="messageInput" placeholder="Nhập tin nhắn">
+    <button type="button" onclick="sendMessage()">Gửi</button>
+  </form>
+
+  <ul id="userList" class="hidden"></ul>
+
+  <script src="script.js"></script>
+  <script>
+    function getRandomIcon() {
+      var icons = ['ico1.ico', 'ico2.ico', 'ico3.ico', 'ico4.ico'];
+      var randomIndex = Math.floor(Math.random() * icons.length);
+      return icons[randomIndex];
+    }
+
+    // Thiết lập favicon bằng icon ngẫu nhiên khi trang được tải
+    document.addEventListener('DOMContentLoaded', function () {
+      var favicon = document.getElementById('favicon');
+      favicon.href = getRandomIcon();
+    });
+
+    window.addEventListener("load", function() {
+      checkUsername();
+    });
+
+    var messageInput = document.getElementById("messageInput");
+    messageInput.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        sendMessage();
+      }
+    });
+  </script>
+</body>
+</html>
